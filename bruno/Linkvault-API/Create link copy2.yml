@@ -1,0 +1,30 @@
+info:
+  name: Create link copy2
+  type: http
+  seq: 5
+
+http:
+  method: POST
+  url: "{{base_url}}/links"
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: "   {\"title\": \"Docker docs\", \"url\": \"https://docs.docker.com/\", \"tag\": \"docker docs\"}
+
+      {\"title\": \"Bruno docs\", \"url\": \"https://docs.usebruno.com/introduction/getting-started\", \"tag\": \"api docs\"}
+
+      \  \ 
+
+      \  \ 
+
+      \   "
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
