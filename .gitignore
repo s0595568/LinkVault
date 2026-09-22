@@ -5,5 +5,7 @@ __pycache__/
 .terraform/
 *.tfstate
 *.tfstate.backup
+*-policy.json
+*.pem
 *.pem
 *-policy.json
