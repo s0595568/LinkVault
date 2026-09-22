@@ -1,11 +1,13 @@
 __pycache__/
 *.pyc
 *.db
+__pycache__/
+*.pyc
+*.db
 .env
 .terraform/
 *.tfstate
 *.tfstate.backup
-*-policy.json
-*.pem
+.venv/
 *.pem
 *-policy.json
