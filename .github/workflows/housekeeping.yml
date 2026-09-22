@@ -1,0 +1,19 @@
+name: Housekeeping
+
+on:
+  schedule:
+    - cron: '0 3 * * 0'   # weekly, Sunday 3am UTC
+  workflow_dispatch:
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Prune old Docker resources on EC2
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USER }}
+          key: ${{ secrets.EC2_SSH_KEY }}
+          script: |
+            sudo docker system prune -af --filter "until=168h"
