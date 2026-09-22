@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+*.db
+.git
+.github
+.venv/
+data/
+terraform/
+k8s/
+README.md
+bruno/
